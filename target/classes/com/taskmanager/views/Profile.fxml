@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.taskmanager.controller.ProfileController"
+      styleClass="root-pane" alignment="CENTER" spacing="0"
+      minWidth="420" minHeight="460">
+
+    <VBox styleClass="login-header" alignment="CENTER" spacing="6">
+        <Label text="My Profile" styleClass="app-logo"/>
+        <Label fx:id="roleLabel" styleClass="subtitle"/>
+    </VBox>
+
+    <VBox styleClass="card" spacing="14" maxWidth="360">
+        <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+
+        <Label text="Username" styleClass="field-label"/>
+        <TextField fx:id="usernameDisplay" styleClass="text-input" editable="false"/>
+
+        <Label text="Email" styleClass="field-label"/>
+        <TextField fx:id="emailField" promptText="your@email.com" styleClass="text-input"/>
+
+        <Separator/>
+        <Label text="Change Password" styleClass="section-heading"/>
+
+        <Label text="New Password" styleClass="field-label"/>
+        <PasswordField fx:id="newPasswordField" promptText="Leave blank to keep current" styleClass="text-input"/>
+
+        <Label text="Confirm Password" styleClass="field-label"/>
+        <PasswordField fx:id="confirmField" promptText="Repeat new password" styleClass="text-input"/>
+
+        <Label fx:id="messageLabel" styleClass="success-label" wrapText="true" visible="false" managed="false"/>
+        <Label fx:id="errorLabel"   styleClass="error-label"   wrapText="true" visible="false" managed="false"/>
+
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="← Back" onAction="#goBack" styleClass="btn-outline"/>
+            <Button text="Save Changes" onAction="#handleSave" styleClass="btn-primary"/>
+        </HBox>
+    </VBox>
+</VBox>

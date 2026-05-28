@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.taskmanager.controller.RegisterController"
+      styleClass="root-pane" alignment="CENTER" spacing="0"
+      minWidth="400" minHeight="560">
+
+    <VBox styleClass="login-header" alignment="CENTER" spacing="8">
+        <Label text="✔ TaskManager" styleClass="app-logo"/>
+        <Label text="Create your account" styleClass="subtitle"/>
+    </VBox>
+
+    <VBox styleClass="card" spacing="14" maxWidth="340">
+        <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+
+        <Label text="Username *" styleClass="field-label"/>
+        <TextField fx:id="usernameField" promptText="Choose a username" styleClass="text-input"/>
+
+        <Label text="Email" styleClass="field-label"/>
+        <TextField fx:id="emailField" promptText="your@email.com" styleClass="text-input"/>
+
+        <Label text="Password *" styleClass="field-label"/>
+        <PasswordField fx:id="passwordField" promptText="Min 6 characters" styleClass="text-input"/>
+
+        <Label text="Confirm Password *" styleClass="field-label"/>
+        <PasswordField fx:id="confirmField" promptText="Repeat password" styleClass="text-input"/>
+
+        <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" visible="false" managed="false"/>
+        <Label fx:id="successLabel" styleClass="success-label" wrapText="true" visible="false" managed="false"/>
+
+        <Button text="Create Account" onAction="#handleRegister"
+                styleClass="btn-primary" maxWidth="Infinity"/>
+
+        <Separator/>
+        <HBox alignment="CENTER" spacing="6">
+            <Label text="Already have an account?" styleClass="muted"/>
+            <Hyperlink text="Sign in" onAction="#goToLogin" styleClass="link"/>
+        </HBox>
+    </VBox>
+</VBox>

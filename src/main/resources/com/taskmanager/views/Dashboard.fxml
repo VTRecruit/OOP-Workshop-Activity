@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.taskmanager.controller.DashboardController"
+            styleClass="root-pane"
+            minWidth="860" minHeight="600">
+
+    <!-- ── Top Bar ── -->
+    <top>
+        <HBox styleClass="topbar" alignment="CENTER_LEFT" spacing="16">
+            <padding><Insets top="12" right="20" bottom="12" left="20"/></padding>
+            <Label text="✔ TaskManager" styleClass="topbar-logo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" styleClass="welcome-label"/>
+            <Button text="⚙ Profile" onAction="#goToProfile" styleClass="btn-outline-sm"/>
+            <Button text="↩ Logout"  onAction="#handleLogout" styleClass="btn-danger-sm"/>
+        </HBox>
+    </top>
+
+    <!-- ── Left Sidebar ── -->
+    <left>
+        <VBox styleClass="sidebar" spacing="4" minWidth="180">
+            <padding><Insets top="20" right="12" bottom="20" left="12"/></padding>
+            <Label text="FILTERS" styleClass="sidebar-section"/>
+            <Button text="All Tasks"       onAction="#filterAll"       styleClass="sidebar-btn" maxWidth="Infinity"/>
+            <Button text="Pending"         onAction="#filterPending"    styleClass="sidebar-btn" maxWidth="Infinity"/>
+            <Button text="In Progress"     onAction="#filterInProgress" styleClass="sidebar-btn" maxWidth="Infinity"/>
+            <Button text="Completed"       onAction="#filterCompleted"  styleClass="sidebar-btn" maxWidth="Infinity"/>
+            <Separator/>
+            <Label text="STATS" styleClass="sidebar-section"/>
+            <VBox styleClass="stats-box" spacing="6">
+                <Label fx:id="totalLabel"     styleClass="stat-item"/>
+                <Label fx:id="pendingLabel"   styleClass="stat-item"/>
+                <Label fx:id="progressLabel"  styleClass="stat-item"/>
+                <Label fx:id="doneLabel"      styleClass="stat-item"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- ── Center: Task Table ── -->
+    <center>
+        <VBox styleClass="content-area" spacing="12">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+            <!-- Toolbar -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" promptText="🔍 Search tasks…"
+                           styleClass="text-input" prefWidth="250"
+                           onKeyReleased="#handleSearch"/>
+                <ComboBox fx:id="priorityFilter" promptText="Priority"
+                          styleClass="combo-box-sm"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="+ New Task" onAction="#openNewTask" styleClass="btn-primary"/>
+            </HBox>
+
+            <!-- Table -->
+            <TableView fx:id="taskTable" VBox.vgrow="ALWAYS" styleClass="task-table">
+                <columns>
+                    <TableColumn fx:id="colTitle"    text="Title"      prefWidth="220"/>
+                    <TableColumn fx:id="colPriority" text="Priority"   prefWidth="90"/>
+                    <TableColumn fx:id="colStatus"   text="Status"     prefWidth="110"/>
+                    <TableColumn fx:id="colDue"      text="Due Date"   prefWidth="110"/>
+                    <TableColumn fx:id="colCreated"  text="Created"    prefWidth="130"/>
+                    <TableColumn fx:id="colActions"  text="Actions"    prefWidth="120"/>
+                </columns>
+                <placeholder>
+                    <Label text="No tasks yet — click '+ New Task' to add one."
+                           styleClass="placeholder-label"/>
+                </placeholder>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
