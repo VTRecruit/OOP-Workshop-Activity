@@ -1,4 +1,4 @@
-# ✔ TaskManager — Java Desktop Application
+#TaskManager — Java Desktop Application
 
 A full-featured JavaFX desktop application with multi-scene navigation,
 SQLite database persistence, and industry-grade credential security —
@@ -28,7 +28,7 @@ using **only built-in Java libraries** (no external crypto dependencies).
 | JavaFX SDK | 17 or higher | https://gluonhq.com/products/javafx/ |
 | SQLite JDBC | 3.45+ | https://github.com/xerial/sqlite-jdbc/releases |
 
-### Option A — Maven (recommended)
+### Option A - Maven (recommended)
 
 ```bash
 # Requires internet access to Maven Central
@@ -36,7 +36,7 @@ mvn javafx:run          # run directly
 mvn package             # build target/taskmanager-fat.jar
 ```
 
-### Option B — Manual build (no Maven)
+### Option B - Manual build (no Maven)
 
 1. Edit `scripts/build.sh` (or `.bat`): set `JAVAFX_HOME` and `SQLITE_JDBC`
 2. Run:
@@ -49,7 +49,7 @@ mvn package             # build target/taskmanager-fat.jar
    java --add-opens java.base/java.lang=ALL-UNNAMED -jar taskmanager.jar
    ```
 
-### Option C — Pre-built JAR
+### Option C - Pre-built JAR
 
 The included `taskmanager.jar` was compiled on Ubuntu 24 with OpenJDK 21 and
 JavaFX 11. To run it you need JavaFX on the module path:
@@ -87,7 +87,7 @@ Password : admin123
 
 ## Security Design
 
-### Password Hashing — PBKDF2WithHmacSHA256
+### Password Hashing - PBKDF2WithHmacSHA256
 
 ```
 Iterations : 100,000
@@ -99,7 +99,7 @@ Storage    : Base64(salt):Base64(hash)  ←  stored in SQLite
 Passwords are **never stored in plain text**. Even with full DB access,
 an attacker faces 100k PBKDF2 iterations per password guess.
 
-### Config File Encryption — AES-256-GCM
+### Config File Encryption - AES-256-GCM
 
 Any sensitive app config (e.g. DB path overrides) is stored in
 `~/.taskmanager/config.enc` using:
