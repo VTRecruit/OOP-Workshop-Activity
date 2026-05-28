@@ -113,7 +113,7 @@ File perms : owner read/write only (chmod 600 equivalent)
 
 ### Session Security
 
-- Sessions are **memory-only** — nothing written to disk at login
+- Sessions are **memory-only** - nothing written to disk at login
 - Logout clears the in-memory session immediately
 - A fresh login is required on every application start
 
@@ -127,7 +127,7 @@ No string concatenation is used in SQL anywhere.
 ## Project Structure
 
 ```
-taskmanager/
+OOP WORKSHOP/
 ├── taskmanager.jar                          ← Pre-built fat JAR
 ├── pom.xml                                  ← Maven build (Java 17 + JavaFX 17)
 ├── README.md
