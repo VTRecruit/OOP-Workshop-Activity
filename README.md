@@ -130,7 +130,6 @@ No string concatenation is used in SQL anywhere.
 OOP WORKSHOP/
 ├── taskmanager.jar                          ← Pre-built fat JAR
 ├── pom.xml                                  ← Maven build (Java 17 + JavaFX 17)
-├── README.md
 ├── scripts/
 │   ├── build.sh                             ← Manual build (Linux/macOS)
 │   ├── run-unix.sh                          ← Launch (Linux/macOS)
