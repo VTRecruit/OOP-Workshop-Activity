@@ -13,7 +13,7 @@ using **only built-in Java libraries** (no external crypto dependencies).
 | **Login** | Secure sign-in with BCrypt-equivalent hashing |
 | **Register** | Create account with password strength validation |
 | **Dashboard** | Task table with sidebar stats, search, priority/status filters |
-| **Task Form** | Modal dialog — create or edit tasks |
+| **Task Form** | Modal dialog - create or edit tasks |
 | **Profile** | Change email and password |
 
 ---
