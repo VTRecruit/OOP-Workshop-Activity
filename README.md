@@ -1,4 +1,4 @@
-#TaskManager — Java Desktop Application
+#TaskManager - Java Desktop Application
 
 A full-featured JavaFX desktop application with multi-scene navigation,
 SQLite database persistence, and industry-grade credential security —
