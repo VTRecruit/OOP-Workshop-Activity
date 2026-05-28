@@ -1,7 +1,7 @@
 #TaskManager - Java Desktop Application
 
 A full-featured JavaFX desktop application with multi-scene navigation,
-SQLite database persistence, and industry-grade credential security —
+SQLite database persistence, and industry-grade credential security -
 using **only built-in Java libraries** (no external crypto dependencies).
 
 ---
