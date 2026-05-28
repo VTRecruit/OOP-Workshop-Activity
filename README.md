@@ -81,7 +81,7 @@ Username : admin
 Password : admin123
 ```
 
-> ⚠️ **Change the admin password immediately** from the Profile screen.
+> **Change the admin password immediately** from the Profile screen.
 
 ---
 
